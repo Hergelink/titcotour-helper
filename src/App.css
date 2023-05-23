@@ -1,38 +1,170 @@
 .App {
+  display: flex;
+  height: 100vh;
+}
+
+/* Navbar */
+.navbarContainer {
+  padding: 20px 10px;
+  width: 250px;
+  height: 100%;
+  background-color: var(--lighBlue);
+  color: var(--darkBlue);
+}
+
+.logoContainer img {
+  width: 120px;
+}
+
+.navbarLinks {
+  margin-top: 50px;
+}
+
+.navbarLinks ul {
+  list-style: none;
+  padding: 0 0 0 5px;
+}
+
+.navbarLinks li {
+  margin-bottom: 10px;
+}
+
+.navbarLinks a {
+  color: var(--darkBlue);
+}
+
+.navbarLinks a:hover {
+  text-decoration: underline;
+}
+
+/* Main */
+.mainContainer {
+  padding: 20px 10px;
+  /* width: 100%; */
+  width: 900px;
+  height: 100%;
+}
+
+section {
+  max-width: 800px;
+  margin: 20px 15px;
+  padding: 20px 10px;
+  background-color: var(--whiteBlue);
+  border-radius: 8px;
+  color: var(--darkBlue);
+}
+
+#dashboardTitle {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+section h1 {
+  font-weight: 700;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.contextWrapper {
+  padding: 2px;
+  width: 100%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.contextGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.contextCard {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: var(--darkBlue);
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.contextCard h3 {
+  color: var(--lighBlue);
+}
+
+/* Form Area */
+
+form {
+  margin-bottom: 2rem;
+  font-size: 18px;
+}
+
+form button,
+.copyBtn {
+  display: flex;
+  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  font-weight: 700;
 }
 
-.App-link {
-  color: #61dafb;
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+input {
+  display: block;
+  width: 95%;
+  background-color: var(--lighBlue);
+  border: 1px solid var(--darkBlue);
+  border-radius: 8px;
+  padding: 10px;
+}
+
+textarea {
+  resize: vertical;
+  background-color: var(--lighBlue);
+  border: 1px solid var(--darkBlue);
+  border-radius: 8px;
+  width: 95%;
+  padding: 10px;
+}
+
+select {
+  width: 80px;
+  background-color: var(--lighBlue);
+  border: 1px solid var(--darkBlue);
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.buttonContainer {
+  display: flex;
+  gap: 10px;
+}
+
+form button,
+.copyBtn {
+  margin-top: 10px;
+  width: 120px;
+  height: 35px;
+  background-color: var(--darkBlue);
+  color: var(--whiteBlue);
+  border: 0;
+  border-radius: 8px;
+}
+
+.deleteBtn {
+  background-color: var(--lighBlue);
+  color: var(--darkBlue);
+  border: 1px solid var(--darkBlue);
+  margin-top: 10px;
+  width: 120px;
+  height: 35px;
+  border-radius: 8px;
+}
+
+.peopleCount {
+  display: flex;
+  gap: 10px;
+}
+
+.seasons {
+  width: 120px;
 }
