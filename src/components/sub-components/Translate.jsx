@@ -11,7 +11,7 @@ export default function Translate() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    const response = await fetch('http://localhost:3001/openai/translate', {
+    const response = await fetch(`${REACT_APP_ENDPOINT}/openai/translate`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
