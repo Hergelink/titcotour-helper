@@ -62,7 +62,7 @@ export default function Translate() {
             name='output'
             rows='10'
             value={translatedText}
-            placeholder='Sonuc burada gözükecektir'
+            placeholder='Sonuç burada gözükecektir'
             readOnly
           ></textarea>
           <div className='buttonContainer'>
