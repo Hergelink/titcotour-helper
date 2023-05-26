@@ -21,7 +21,7 @@ export default function TourAdvice() {
     Ülke: ${country}, Şehir: ${city}, Yetişkin Sayısı: ${adultCount}, Çocuk Sayısı: ${childCount}, Mevsim: ${season}, Toplam Gün Sayısı: ${dayCount}.`);
 
     const response = await fetch(
-      `${process.env.REACT_APP_ENDPOINT}/openai/tour-advice`,
+      `${process.env.REACT_APP_ENDPOINT}/openai/tour-advisor`,
       {
         method: 'POST',
         headers: {
@@ -145,7 +145,7 @@ export default function TourAdvice() {
         <textarea
           name='output'
           rows='10'
-          defaultValue={advisedTour}
+          value={advisedTour}
           placeholder='Tur önerisi burada gözükecektir'
         ></textarea>
       </div>
