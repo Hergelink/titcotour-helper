@@ -19,6 +19,7 @@ export default function TourAdvice() {
     setLoading(true);
     setTourInformation(`You are a great Travel Helper which gives detailed travel tips based on some info provided by a user. Please give great travel tips and tour guide advices for these info in turkish only:      
     Country: ${country}, City: ${city}, Number of Adults: ${adultCount}, Number of Childs: ${childCount}, Season of the Year: ${season}, Number of Days: ${dayCount}.`);
+
     const response = await fetch(
       `${process.env.REACT_APP_ENDPOINT}/openai/tour-advice`,
       {
@@ -144,8 +145,9 @@ export default function TourAdvice() {
         <textarea
           name='output'
           rows='10'
+          defaultValue={advisedTour}
           placeholder='Tur önerisi burada gözükecektir'
-        >{advisedTour}</textarea>
+        ></textarea>
       </div>
     </section>
   );
