@@ -7,23 +7,25 @@ export default function Translate() {
   const [translatedText, setTranslatedText] = useState(
     'sonuc burada gozukecektir'
   );
-  const [postRoute, setPostRoute] = useState('translate')
+  const [postRoute, setPostRoute] = useState('translate');
 
-  const handleRouteChange =  (e) => {
-    setPostRoute(e.target.value)
-  }
-
+  const handleRouteChange = (e) => {
+    setPostRoute(e.target.value);
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    const response = await fetch(`${process.env.REACT_APP_ENDPOINT}/openai/${postRoute}`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ text: turkishText }),
-    });
+    const response = await fetch(
+      `${process.env.REACT_APP_ENDPOINT}/openai/${postRoute}`,
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ text: turkishText }),
+      }
+    );
 
     const data = await response.json();
     setTranslatedText(data.data);
@@ -44,11 +46,22 @@ export default function Translate() {
 
   return (
     <section>
-      <h1>Çeviri 🇹🇷 &rarr; 🇬🇧</h1>
-      <select className='routeChanger' defaultValue='translate' onChange={handleRouteChange}>
-        <option value="translate">🇹🇷 &rarr; 🇬🇧</option>
-        <option value="translate-to-turkish">🇬🇧 &rarr; 🇹🇷</option>
-        <option value="grammer-check">🇬🇧 &rarr; 🇬🇧</option>
+      <h1>
+        Çeviri{' '}
+        {postRoute === 'translate-to-turkish'
+          ? '🇬🇧 \u2192 🇹🇷'
+          : postRoute === 'grammer-check'
+          ? '🇬🇧 \u2192 🇬🇧'
+          : '🇹🇷 \u2192 🇬🇧'}
+      </h1>
+      <select
+        className='routeChanger'
+        defaultValue='translate'
+        onChange={handleRouteChange}
+      >
+        <option value='translate'>Türkçeden İngilizceye</option>
+        <option value='translate-to-turkish'>İngilizceden Türkçeye</option>
+        <option value='grammer-check'>İngilizceyi Düzenle</option>
       </select>
       <div className='contextWrapper'>
         <form onSubmit={handleSubmit}>
@@ -79,7 +92,9 @@ export default function Translate() {
             <button onClick={handleCopy} className='copyBtn'>
               Kopyala
             </button>
-            <button className='deleteBtn' onClick={handleOutputDelete}>Sil</button>
+            <button className='deleteBtn' onClick={handleOutputDelete}>
+              Sil
+            </button>
           </div>
         </div>
       </div>
