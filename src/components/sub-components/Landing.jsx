@@ -6,11 +6,11 @@ export default function Landing() {
       <h1 id='dashboardTitle'>Ana Panel</h1>
       <div className='contextWrapper'>
         <div className='contextGrid'>
-          <Link to='/pitch' className='contextCard'>
-            <h3>Teklif Oluşturucu</h3>
-          </Link>
           <Link to='/translate' className='contextCard'>
             <h3>Çeviri</h3>
+          </Link>
+          <Link to='/pitch' className='contextCard'>
+            <h3>Teklif Oluşturucu</h3>
           </Link>
           <Link to='/tour-advice' className='contextCard'>
             <h3>Tur Onerileri</h3>

@@ -10,15 +10,16 @@ export default function Navbar() {
       </div>
       <div className='navbarLinks'>
         <ul>
-        <li>
-            <Link to='/'>Ana Panel</Link>
-          </li>
           <li>
-            <Link to='/pitch'>Teklif Olusturucu</Link>
+            <Link to='/'>Ana Panel</Link>
           </li>
           <li>
             <Link to='/translate'>Ceviri</Link>
           </li>
+          <li>
+            <Link to='/pitch'>Teklif Olusturucu</Link>
+          </li>
+
           <li>
             <Link to='/tour-advice'>Tur Onerileri</Link>
           </li>
