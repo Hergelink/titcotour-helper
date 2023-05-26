@@ -7,11 +7,17 @@ export default function Translate() {
   const [translatedText, setTranslatedText] = useState(
     'sonuc burada gozukecektir'
   );
+  const [postRoute, setPostRoute] = useState('translate')
+
+  const handleRouteChange =  (e) => {
+    setPostRoute(e.target.value)
+  }
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    const response = await fetch(`${process.env.REACT_APP_ENDPOINT}/openai/translate`, {
+    const response = await fetch(`${process.env.REACT_APP_ENDPOINT}/openai/${postRoute}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -38,8 +44,12 @@ export default function Translate() {
 
   return (
     <section>
-      <h1>Çeviri 🇹🇷 &rarr; 🇬🇧
- </h1>
+      <h1>Çeviri 🇹🇷 &rarr; 🇬🇧</h1>
+      <select className='routeChanger' defaultValue='translate' onChange={handleRouteChange}>
+        <option value="translate">🇹🇷 &rarr; 🇬🇧</option>
+        <option value="translate-to-turkish">🇬🇧 &rarr; 🇹🇷</option>
+        <option value="grammer-check">🇬🇧 &rarr; 🇬🇧</option>
+      </select>
       <div className='contextWrapper'>
         <form onSubmit={handleSubmit}>
           <label>
