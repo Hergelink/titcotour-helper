@@ -169,11 +169,41 @@ form button,
   width: 120px;
 }
 
-
 .routeChanger {
   width: 350px;
   height: 50px;
   margin-bottom: 2rem;
   font-size: 1rem;
   color: var(--darkBlue);
+}
+
+.wideDesktopView {
+  display: none;
+}
+
+@media only screen and (min-width: 50em) {
+  .mainContainer {
+    display: flex;
+  }
+
+  .outputContainer {
+    display: none;
+  }
+
+  section {
+    width: 50%;
+  }
+
+  .wideDesktopView {
+    width: 80%;
+    /* width: 450px; */
+    display: block;
+    margin: 20px 15px;
+    padding: 20px 10px;
+  }
+
+  .wideOutput {
+    min-height: 750px;
+    color: var(--darkBlue);
+  }
 }
