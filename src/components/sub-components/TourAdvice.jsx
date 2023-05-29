@@ -10,15 +10,18 @@ export default function TourAdvice() {
   const [season, setSeason] = useState('ilkbahar');
   const [dayCount, setDayCount] = useState(1);
 
-  const [tourInformation, setTourInformation] = useState('zero info');
+  // const [tourInformation, setTourInformation] = useState('zero info');
   const [advisedTour, setAdvisedTour] = useState(
     'Tur Önerisi Burada Gözükecektir'
   );
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    setTourInformation(`You are a great Travel Helper which gives detailed travel tips based on some info provided by a user. Please give great travel tips and tour guide advices for these info in turkish only:      
-    Ülke: ${country}, Şehir: ${city}, Yetişkin Sayısı: ${adultCount}, Çocuk Sayısı: ${childCount}, Mevsim: ${season}, Toplam Gün Sayısı: ${dayCount}.`);
+
+    const updatedTourInformation = `You are a great Travel Helper which gives detailed travel tips based on some info provided by a user. Please give great travel tips and tour guide advices for these info in turkish only:      
+    Ülke: ${country}, Şehir: ${city}, Yetişkin Sayısı: ${adultCount}, Çocuk Sayısı: ${childCount}, Mevsim: ${season}, Toplam Gün Sayısı: ${dayCount}.`;
+
+    // setTourInformation(updatedTourInformation);
 
     const response = await fetch(
       `${process.env.REACT_APP_ENDPOINT}/openai/tour-advisor`,
@@ -27,7 +30,7 @@ export default function TourAdvice() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ text: tourInformation }),
+        body: JSON.stringify({ text: updatedTourInformation }),
       }
     );
 
