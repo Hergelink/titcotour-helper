@@ -18,7 +18,7 @@ export default function TourAdvice() {
     e.preventDefault();
     setLoading(true);
 
-    const updatedTourInformation = `You are a great Travel Helper which gives detailed daily travel tips based on some info provided by the user. Please give great travel tips and tour guide advices for these info in turkish only:      
+    const updatedTourInformation = `You are a great Travel Helper which gives travel tips based on some info provided by the user. Please give great travel tips for each day and tour guide advices for these info in turkish only:      
     Ülke: ${country}, Şehir: ${city}, Yetişkin Sayısı: ${adultCount}, Çocuk Sayısı: ${childCount}, Mevsim: ${season}, Toplam Gün Sayısı: ${dayCount}.`;
 
     // setTourInformation(updatedTourInformation);
